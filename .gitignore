@@ -1,0 +1,8 @@
+node_modules
+application.log
+error.log
+.env
+application-2023-09-01.log
+application-2023-09-02.log
+application-2023-09-03.log
+server_copy.js

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <%- include('partials/head.ejs') %>
+
+    <style>
+        body {
+            background-color: rgb(231, 89, 89);
+
+        }
+
+        .align {
+          text-align: center;
+          margin: auto auto;
+        }
+
+        p {
+            font-size: 60px;
+        }
+
+        .ques-container {
+            margin-top: 20vh;
+            height: 50vh;
+            width: 50vw;
+        }
+
+        footer {
+            position: fixed;
+            bottom:0;
+            width: 100vw;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <%- include('partials/header.ejs') %>
+
+    <main class="d-flex">
+
+
+        <div class="align ques-container container-fluid">
+            <h1>Your Response has been submitted</h1>
+            <h3>Response You have submitted was wrong</h3>
+        </div>
+
+    </main>
+
+    <footer>
+        <%- include('partials/footer.ejs') %>
+    </footer>
+
+    
+</body>
+</html>

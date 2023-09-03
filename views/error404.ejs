@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant&display=swap" rel="stylesheet"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="error-wrapper">
+        <div class="error-container">
+            <div class="error">
+                <div class="error-title">
+                    Error
+                </div>
+                <div class="error-number">
+                    404
+                </div>
+                <div class="error-description">
+                    Sorry, The page you were looking for doesn't exist
+                </div>
+                <div class="error-or">
+                    <div class="or-line"></div>
+                    <div class="or">Or</div>
+                </div>
+                <ul class="error-actions">
+                    <li>
+                        <a onclick="goBack()" href="#">
+                            <i class="fa-solid fa-arrow-left" data-toggle="tooltip" title="" data-original-title="BACK"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class="fa-solid fa-house" data-toggle="tooltip" title="" data-original-title="HOME"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class="fa-solid fa-address-book" data-toggle="tooltip" title="" data-original-title="CONTACT US"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="background-color: black;">
+            <%- include('partials/footer.ejs') %>
+        </div>
+    </footer>
+</body>
+
+
+<script>
+    // Add an event listener to the anchor tag
+function goBack() {
+  window.history.back();
+}
+</script>
+</html>
