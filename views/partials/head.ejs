@@ -39,7 +39,27 @@
 
 <link rel="stylesheet" href="/css/style.css">
 
+<!-- Manifest file  -->
+<link rel="manifest" href="/manifest.json">
+
+
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/path/to/favicon-32x32.png">
 
 <!-- Additional custom meta tags specific to your needs -->
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/service-worker.js') // Path is relative to the root directory
+          .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+</script>
+  

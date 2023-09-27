@@ -35,6 +35,9 @@
         <li>
           <a class="btn register-link" href="/register">REGISTER</a>
         </li>
+        <!-- <li>
+          <button class="btn register-link" id="installButton">Install</button>
+        </li> -->
       </ul>
     <% } else { %>
       <!-- Render the <ul> for other views here -->
@@ -115,8 +118,12 @@
             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
               alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-            <h5>Marie Horwitz</h5>
-            <p>Web Designer</p>
+              <% if (user && user.name) { %>
+                <h5><%= user.name %></h5>
+              <% } else { %>
+                <h5>Orcus User</h5>
+              <% } %>
+            <p>Orcus Member</p>
             <i class="far fa-edit mb-5"></i>
           </div>
           <div class="col-md-8">

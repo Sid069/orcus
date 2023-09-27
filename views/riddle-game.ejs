@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body>
+
+    <div class="riddle-hero">
+        
+        <a href="/home"><img src="assets\\img\\ORCUS_BRAND.png" alt="ORCUS BRAND LOGO" height="100px" width="300px"></a>
+        <img src="assets\\img\\the-genius-head.jpg" alt="ORCUS BRAND LOGO" class="bg-img" height="100px" width="300px">
+
+        <div class="py-5">
+            <h1>Riddle Game</h1>
+        <p><%= riddle.text %></p>
+        
+        <div class="py-5">
+            <form method="post" action="/riddle-game">
+                <label for="answer">Your Answer:</label>
+                <input type="text" id="answer" class="riddle-input" name="answer" required>
+                <button type="submit" class="cta-button">Submit</button>
+            <button onclick="location.href='/riddle-game'" type="button" class="cta-button">Next</button>
+    
+            </form>
+        </div>
+
+        <% if (message) { %>
+        <div>
+            <%= message %>
+        </div>
+        <% } %>
+        </div>
+    </div>
+
+    
+
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

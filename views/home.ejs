@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <img class="bg-img" src="../assets/img/black-white-teeth.jpg" alt="">
+    <div class="home">
+
+        <!-- Hero Section -->
+        <section class="hero py-5">
+            <div class="hero-content">
+                <h1>Welcome to Orcus</h1>
+                <p>Igniting Ambition, Inspiring Success</p>
+                <a href="#learn-more" class="cta-button">Learn More</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="learn-more p-5" class="about">
+            <div class="about-content">
+                <h2>About Orcus</h2>
+                <p>
+                    At Orcus, we envision a world where every individual has the power to unearth their true potential and achieve extraordinary success. Our mission is to empower people from all walks of life to transcend the ordinary and embrace the extraordinary.
+                </p>
+                <a href="#services" class="cta-button">Explore Services</a>
+            </div>
+        </section>
+
+        <section id="riddle-game" class="riddle">
+            <div class="riddle-content">
+                <h2>Play the Riddles</h2>
+                <p>"Challenge your mind and have some fun – Play our exciting riddle game now!".</p>
+                <a href="/riddle-game" class="cta-button">Play Riddles</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="service">
+                <h3>Riddle-Solving Experience</h3>
+                <p>Embark on a transformative journey through riddles that stimulate critical thinking and self-reflection.</p>
+            </div>
+            <div class="service">
+                <h3>Personalized Guidance</h3>
+                <p>Receive guidance and support to set audacious goals and pursue your passions.</p>
+            </div>
+            <div class="service">
+                <h3>Community Building</h3>
+                <p>Join our vibrant community of ambitious individuals who uplift and inspire one another.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Ready to Unlock Your Potential?</h2>
+                <p>Join Orcus today and start your journey towards a life of purpose and fulfillment.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or inquiries, feel free to get in touch with our team.</p>
+                <a href="/contact-us" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+
+</body>
+</html>

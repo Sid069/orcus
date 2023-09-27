@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Riddle</title>
+</head>
+<body>
+    <h1>Add a New Riddle</h1>
+    <form action="/add-riddle" method="POST">
+        <label for="riddleText">Riddle Text:</label>
+        <textarea name="riddleText" id="riddleText" rows="4" cols="50" required></textarea>
+        
+        <label for="riddleAnswer">Riddle Answer:</label>
+        <input type="text" name="riddleAnswer" id="riddleAnswer" required>
+    
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

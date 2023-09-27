@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body style="color: black;">
+    <h1>Forgot Password</h1>
+
+
+<!-- Display the error message if it exists -->
+<% if (errorMessage) { %>
+  <p class="error-message"><%= errorMessage %></p>
+  <p>Go back 
+    <a onclick="goBack()" href="#">
+        &larr;
+    </a>
+    </p>
+<% } else if (!emailFound) { %>
+  <!-- Create the form with a single email field -->
+  <p>Enter your email address to reset your password.</p>
+  <form method="POST" action="/forgot-password">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <button type="submit">Submit</button>
+  </form>
+<% } %>
+
+<% if (emailFound) { %>
+  <!-- User email is found, render the "Reset Password" form -->
+  <p>Reset your password by entering a new password for </p>
+  <p>Email : <%= email %>.</p>
+
+  <!-- Create the password reset form with two password fields -->
+  <form method="POST" action="/reset-password">
+    <label for="password">New Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <button type="submit">Reset Password</button>
+  </form>
+<% } %>
+
+
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+
+</body>
+</html>

@@ -5,46 +5,80 @@
     <%- include('partials/head.ejs') %>
 
     <style>
-        body {
-            background-color: rgb(231, 89, 89);
+    
 
-        }
-
-        .align {
-          text-align: center;
-          margin: auto auto;
-        }
-
-        p {
-            font-size: 60px;
+    /* Large screens (greater than or equal to 1200px) */
+    @media (min-width: 1200px) {
+        #timer {
+            font-size: 4rem;
         }
 
         .ques-container {
-            margin-top: 20vh;
-            height: 50vh;
-            width: 50vw;
+            height: 50%;
         }
 
-        footer {
-            position: fixed;
-            bottom:0;
-            width: 100vw;
+        .ques-content {
+            padding: 2rem 1rem;
         }
+
+        main {
+            margin-top: 6rem;
+        }
+    }
+
+    /* Medium screens (between 768px and 1199px) */
+    @media (min-width: 768px) and (max-width: 1199px) {
+        #timer {
+            font-size: 3rem;
+        }
+
+        .ques-container {
+            height: 45%;
+        }
+
+        .ques-content {
+            padding: 0;
+        }
+
+        main {
+            margin-top: 4rem;
+        }
+    }
+
+    /* Small screens (less than 768px) */
+    @media (max-width: 767px) {
+        #timer {
+            font-size: 1.5rem;
+        }
+
+        .ques-container {
+            height: 30%;
+        }
+
+        .ques-content {
+            padding: 0;
+            height: 100%;
+        }
+
+        main {
+            margin-top: 2rem;
+        }
+    }
 
     </style>
 
 </head>
 <body>
-
+    <img class="bg-imgNb" src="../assets/img/the wrong choice.jpg" alt="">
 
     <%- include('partials/header.ejs') %>
 
     <main class="d-flex">
 
 
-        <div class="align ques-container container-fluid">
-            <h1>Your Response has been submitted</h1>
-            <h3>Response You have submitted was wrong</h3>
+        <div class="ques-container">
+            <h1 class="text-responsive">Your Response has been submitted</h1>
+            <h3 class="text-responsive">Response You have submitted was wrong</h3>
         </div>
 
     </main>

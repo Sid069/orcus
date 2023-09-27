@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css"> <!-- Add your custom CSS file here -->
+  <!-- Add your other head includes (partials/head.ejs) as needed -->
   <%- include('partials/head.ejs') %>
 
 </head>
 <body>
+      <%- include('partials/header.ejs') %>
+
+
+  <!-- Main Content -->
+  <main>
     <img class="bg-img" src="../assets/img/red-black-demon.jpg" alt="">
+    <div class="ques-container">
+      <h1 class="ques text-responsive">Ques. What You hold most dear is what you really seek.</h1>
+      <form action="/submit-answer" method="post">
+        <input class="answer w-75" id="answer" name="answer" type="text" placeholder="The answer is really mysterious..." minlength="3" maxlength="20">
+        <button class="ques-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
 
-    <%- include('partials/header.ejs') %>
-
-
-    <main class="d-flex" style="position: relative;">
-
-
-        <div class="ques-container mx-auto t-50">
-            <div class=""><h1 class="ques">Ques. What You hold most dear is what you really seek.</h1></div>
-            <div class="">
-                <form action="/submit-answer" method="post">
-                    <input class='answer w-75' id="answer" name="answer" type="text" placeholder='Type your answer here...' minlength="3" maxlength="20" /> 
-                    <button class="ques-btn" type="submit" > Submit</button>
-                </form>
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
-
-        <%- include('partials/footer.ejs') %>
-    </footer>
+  <!-- Footer (Initially Hidden) -->
+  <footer class="hidden">
+      <%- include('partials/footer.ejs') %>
+  </footer>
 
 
+  <!-- Add JavaScript to show footer on scroll -->
+  <script>
+    const footer = document.querySelector('footer');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        footer.classList.remove('hidden');
+      } else {
+        footer.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>

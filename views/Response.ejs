@@ -1,62 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <%- include('partials/head.ejs') %>
+    <style>    
+    
 
-    <style>
-
-        .align {
-          text-align: center;
-          margin: auto auto;
-        }
-
-        p {
-            font-size: 60px;
+    /* Large screens (greater than or equal to 1200px) */
+    @media (min-width: 1200px) {
+        #timer {
+            font-size: 4rem;
         }
 
         .ques-container {
-            margin-top: 20vh;
-            height: 50vh;
-            width: 50vw;
+            height: 50%;
         }
 
-        footer {
-            position: fixed;
-            bottom:0;
-            width: 100vw;
+        .ques-content {
+            padding: 2rem 1rem;
         }
 
+        main {
+            margin-top: 6rem;
+        }
+    }
+
+    /* Medium screens (between 768px and 1199px) */
+    @media (min-width: 768px) and (max-width: 1199px) {
+        #timer {
+            font-size: 3rem;
+        }
+
+        .ques-container {
+            height: 45%;
+        }
+
+        .ques-content {
+            padding: 0;
+        }
+
+        main {
+            margin-top: 4rem;
+        }
+    }
+
+    /* Small screens (less than 768px) */
+    @media (max-width: 767px) {
+        #timer {
+            font-size: 1.5rem;
+        }
+
+        .ques-container {
+            height: 30%;
+        }
+
+        .ques-content {
+            padding: 0;
+            height: 100%;
+        }
+
+        main {
+            margin-top: 2rem;
+        }
+    }
     </style>
-
 </head>
 <body>
-
-        <%- include('partials/header.ejs') %>
+    <%- include('partials/header.ejs') %>
 
     <main class="d-flex">
-
         <img class="bg-img" src="../assets/img/red-black-demon.jpg" alt="">
-
-        <div class="ques-container mx-auto">
-            <div class=""><h1>Your Response has been submitted</h1></div>
-            <div class="">
-                <h3 class="text-responsive">Result will announce in </h3>
-                <p id="timer " class="text-responsive"></p>
+        <div class="ques-container">
+            <div class="ques-content">
+                <h1 class="text-responsive">Your Response has been submitted</h1>
+            
+                <div class="">
+                    <h3 class="text-responsive">Result will announce in </h3>
+                    <p id="timer"></p>
+                </div>
             </div>
         </div>
-
     </main>
 
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
 
-
-
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("SEP 3, 2023 00:00:00").getTime();
+        var countDownDate = new Date("SEP 12, 2023 00:00:00").getTime();
 
         // Update the count down every 1 second
         var x = setInterval(function() {
@@ -73,7 +104,7 @@
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the element with id="demo"
+        // Display the result in the element with id="timer"
         document.getElementById("timer").innerHTML = days + "d " + hours + "h "
         + minutes + "m " + seconds + "s ";
 
@@ -84,6 +115,5 @@
         }
         }, 1000);
     </script>
-    
 </body>
 </html>
